@@ -13,10 +13,6 @@ export default class Carousel extends Component {
       slidesToShow: 2,
       centerPadding: "60px",
       className: "center",
-      autoplay: true,
-      speed: 2000,
-      autoplaySpeed: 2000,
-      cssEase: "linear",
       responsive: [
         {
           breakpoint: 1024,
