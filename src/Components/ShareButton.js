@@ -5,6 +5,7 @@ import Button from '@material-ui/core/Button';
 import purple from '@material-ui/core/colors/purple';
 import Share from '@material-ui/icons/Share';
 
+
 const styles = theme => ({
   button: {
     margin: theme.spacing.unit,
@@ -21,12 +22,15 @@ const theme = createMuiTheme({
       main: '#2196f3',
     },
   },
+  typography: {
+    useNextVariants: true,
+  },
 });
 
 class ShareButton extends React.Component {
   constructor(props) {
     super(props);
-    this.buttonRef = React.createRef();
+    
     this.shareMenu=this.shareMenu.bind(this);
   }
   async  shareMenu () {
@@ -43,10 +47,10 @@ class ShareButton extends React.Component {
     return (
       <div>
         <MuiThemeProvider theme={theme}>
-          <Button ref={this.buttonRef} variant="extendedFab" color="secondary" onClick={this.shareMenu} aria-label="Delete" className={classes.button}>
+          <Button  variant="extendedFab" color="secondary" onClick={this.shareMenu} aria-label="Share" className={classes.button}>
             <Share />
             Share
-      </Button>
+           </Button>
         </MuiThemeProvider>
       </div>
     );

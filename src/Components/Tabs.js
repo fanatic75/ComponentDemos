@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { withStyles } from '@material-ui/core/styles';
+import { withStyles,createMuiTheme, MuiThemeProvider } from '@material-ui/core/styles';
 import Stepper from '@material-ui/core/Stepper';
 import Step from '@material-ui/core/Step';
 import StepLabel from '@material-ui/core/StepLabel';
@@ -20,6 +20,12 @@ const styles = theme => ({
   instructions: {
     marginTop: theme.spacing.unit,
     marginBottom: theme.spacing.unit,
+  },
+});
+const theme = createMuiTheme({
+
+  typography: {
+    useNextVariants: true,
   },
 });
 
@@ -72,6 +78,7 @@ class Tabs extends React.Component {
 
     return (
       <div className={classes.root}>
+      <MuiThemeProvider theme={theme}>
         <Stepper activeStep={activeStep} alternativeLabel>
           {steps.map(label => {
             return (
@@ -86,7 +93,7 @@ class Tabs extends React.Component {
           {this.state.activeStep === steps.length ? (
             <div>
               <Typography className={classes.instructions}>All steps completed</Typography>
-              <Button onClick={this.handleReset}>Reset</Button>
+              <Button variant="contained" onClick={this.handleReset}>Reset</Button>
             </div>
           ) : (
             <div>
@@ -96,6 +103,7 @@ class Tabs extends React.Component {
                   disabled={activeStep === 0}
                   onClick={this.handleBack}
                   className={classes.backButton}
+                  variant="contained"
                 >
                   Back
                 </Button>
@@ -106,6 +114,7 @@ class Tabs extends React.Component {
             </div>
           )}
         </div>
+        </MuiThemeProvider>
       </div>
     );
   }

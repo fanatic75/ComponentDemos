@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import './App.css';
-import Tab from "./Components/Tabs";
+import Tabs from "./Components/Tabs";
 
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <Tab /> 
+        <Tabs /> 
       </div>
     );
   }

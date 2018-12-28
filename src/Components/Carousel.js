@@ -6,26 +6,38 @@ export default class Carousel extends Component {
     var settings = {
       dots: true,
       infinite: true,
-      centerMode:true,
-      speed: 500,
-      slidesToShow: 3,
-      slidesToScroll: 3,
-      initialSlide: 0,
+      className: "center",
+
+      centerMode: true,
+      centerPadding: "60px",
+      autoplay: true,
+      speed: 2000,
+      autoplaySpeed: 2000,
+      cssEase: "linear",
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      swipeToSlide: true,
+     
       responsive: [
         
         {
           breakpoint: 600,
           settings: {
-            slidesToShow: 2,
-            slidesToScroll: 2,
-            initialSlide: 2
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            centerMode: true,
+            centerPadding: "60px",
+            speed: 1000,
           }
         },
         {
           breakpoint: 480,
           settings: {
             slidesToShow: 1,
-            slidesToScroll: 1
+            slidesToScroll: 1,
+            centerMode: true,
+            centerPadding: "60px",
+             speed: 1000,
           }
         }
       ]
@@ -35,18 +47,18 @@ export default class Carousel extends Component {
         <h2> Responsive </h2>
         <Slider {...settings}>
          <div>
-            <img src="../images/fair.jpg" alt="fair"/>
+            <img src="../images/fair.jpg" width="100%" height="20%" alt="fair"/>
+
+        </div>
+        <div> 
+            <img src="../images/princess.jpg" width="100%" height="20%" alt="fair"/>
+        </div>
+        <div>
+            <img src="../images/fair.jpg" width="100%" height="20%" alt="fair"/>
 
         </div>
         <div>
-            <img sr="../images/princess.jpg" alt="fair"/>
-        </div>
-        <div>
-            <img src="../images/fair.jpg" alt="fair"/>
-
-        </div>
-        <div>
-            <img sr="../images/princess.jpg" alt="fair"/>
+            <img src="./images/princess.jpg" width="100%" height="20%" alt="fair"/>
         </div>
         </Slider>
       </div>

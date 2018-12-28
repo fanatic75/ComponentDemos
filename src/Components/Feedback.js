@@ -22,6 +22,10 @@ const theme = createMuiTheme({
     secondary: {
       main: '#f44336',
     },
+
+  },
+  typography: {
+    useNextVariants: true,
   },
 });
 
@@ -30,7 +34,7 @@ function Feedback(props) {
   return (
     <div>
      <MuiThemeProvider theme={theme}>
-      <Button variant="extendedFab" color="primary"  aria-label="Delete" className={classes.button}>
+      <Button variant="extendedFab" color="primary"  aria-label="Feedback" className={classes.button}>
         
         FEEDBACK
       </Button>
